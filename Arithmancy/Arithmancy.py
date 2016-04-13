@@ -23,7 +23,7 @@ for this comment.
 
 class Arithmancy(object):
     def __init__(self,phrase='',debug=False):
-        self.phrase = phrase
+        self.phrase = phrase if phrase else input("Enter a spell: ")
         self.reduced_phrase = self.phrase.lower().replace(" ","")
         self.debug = debug #Used to print extra stuff
         self.root = self.calc_root()
@@ -61,6 +61,5 @@ class Arithmancy(object):
 
 #A unit test
 if __name__ == '__main__':
-    spell = 'Empowered Fireball'
-    test = Arithmancy(spell)
+    test = Arithmancy()
     print test
